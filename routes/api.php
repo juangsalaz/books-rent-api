@@ -25,4 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('register', RegisterController::class);
 Route::post('login', LoginController::class);
 Route::apiResource('books', BookController::class)->middleware('auth:sanctum');
-Route::post('checkouts', CheckoutController::class)->middleware('auth:sanctum');
+Route::post('checkouts', [CheckoutController::class, 'create'])->middleware('auth:sanctum');
+Route::put('checkouts/{checkout}', [CheckoutController::class, 'update'])->middleware('auth:sanctum');
