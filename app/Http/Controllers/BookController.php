@@ -23,6 +23,14 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => ['required'],
+            'author' => ['required'],
+            'isbn' => ['required'],
+            'published_at' => ['required'],
+            'copies' => ['required']
+        ]);
+        
         $book = Book::create([
             'title' => $request->title,
             'author' => $request->author,
@@ -41,9 +49,9 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-       return response()->json([
-        'data' => $book
-       ]);
+        return response()->json([
+            'data' => $book
+        ]);
     }
 
     /**
@@ -51,6 +59,14 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
+        $request->validate([
+            'title' => ['required'],
+            'author' => ['required'],
+            'isbn' => ['required'],
+            'published_at' => ['required'],
+            'copies' => ['required']
+        ]);
+        
         $book->title = $request->title;
         $book->author = $request->author;
         $book->isbn = $request->isbn;
