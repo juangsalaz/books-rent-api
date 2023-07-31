@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "9000:8080"
+      - "9001:8080"
     volumes:
       - ./:/var/www/laravel-restful-api/
       - ./nginx/conf.d/:/etc/nginx/conf.d/
