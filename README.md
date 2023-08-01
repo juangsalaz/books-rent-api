@@ -1,5 +1,5 @@
 # Books rent RESTful API
-This API developed using Laravel, implemented Sanctum to generating token for authentication and also running in the docker environment
+Books rent API developed using Laravel, implemented Sanctum to generating token for authentication and also running in the docker environment
 
 ## This is online docummeentation
 you can try this API online using this docummentation
